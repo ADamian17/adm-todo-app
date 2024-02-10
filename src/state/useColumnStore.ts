@@ -55,36 +55,34 @@ export const useTodoListsStore = create(
           source: { droppableId: sourceColId, index: sourceIdx },
           destination: { droppableId: destinationColId, index: destinationIdx },
         } = result;
+        const prevTodos = columns[sourceColId];
+        const sourceTodos = prevTodos.map((col) => col);
+        const [todo] = sourceTodos.splice(sourceIdx, 1);
+        let updatedColumns: UseColumnStoreState["columns"];
 
         if (sourceColId !== destinationColId) {
-          const sourceTodos = columns[sourceColId].map((col) => col);
           const destinationTodos = columns[destinationColId].map((col) => col);
 
-          const [todo] = sourceTodos.splice(sourceIdx, 1);
           todo.status = destinationColId;
           destinationTodos.splice(destinationIdx, 0, todo);
 
-          return set((prev) => ({
-            ...prev,
-            columns: {
-              ...prev.columns,
-              [sourceColId]: sourceTodos,
-              [destinationColId]: destinationTodos,
-            },
-          }));
+          updatedColumns = {
+            ...columns,
+            [sourceColId]: sourceTodos,
+            [destinationColId]: destinationTodos,
+          };
+
+          return set({ columns: updatedColumns });
         }
 
-        // const todo = Array.from(columns[columnKey]);
-        // const [reorderedItem] = items.splice(result.source.index, 1);
-        // items.splice(result.destination.index, 0, reorderedItem);
+        sourceTodos.splice(destinationIdx, 0, todo);
 
-        // set((prev) => ({
-        //   ...prev,
-        //   columns: {
-        //     ...prev.columns,
-        //     [columnKey]: items,
-        //   },
-        // }));
+        updatedColumns = {
+          ...columns,
+          [sourceColId]: sourceTodos,
+        };
+
+        set({ columns: updatedColumns });
       },
     }),
     {
