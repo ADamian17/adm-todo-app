@@ -18,6 +18,7 @@ make whatever UI and UX decisions you want to make it usable. Don't worry, we ar
 * zustand
 * sass
 * [react-beautiful-dnd](https://github.com/atlassian/react-beautiful-dnd/tree/master)
+  * [implement-react-beautiful-dnd](https://code.pieces.app/blog/implement-react-beautiful-dnd)
 * [react-canvas-confetti](https://www.npmjs.com/package/react-canvas-confetti)
 
 ## Usage

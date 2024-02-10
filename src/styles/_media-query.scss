@@ -1,0 +1,24 @@
+@use 'sass:map';
+
+/* Break Points */
+$break-points: (
+  'md': 768px,
+  'lg': 1024px,
+  'xl': 1208px,
+);
+
+@function get-bp($bp) {
+  @return map.get($break-points, $bp);
+}
+
+@mixin media-query($bp) {
+  @if get-bp($bp) {
+    @media (min-width: get-bp($bp)) {
+        @content;
+    }
+  }
+
+  @else {
+    @error "Please enter a valid break-point -> (md, lg, xl)";
+  }
+}
