@@ -24,3 +24,17 @@ make whatever UI and UX decisions you want to make it usable. Don't worry, we ar
 
 * Clone repo
 * Install dependencies ``yarn or yarn install``
+
+## User Stories
+
+* When user land on the page with three vertical list
+  * ``Todo``
+  * ``Doing``
+  * ``Done``
+* User can create a todo by using the form
+  * Todo can only be added if the title is not empty
+  * If title is empty add text error
+  * By default todo is added to the ``Todo`` list
+* User can drag and drop between the lists
+  * Update todo status when user drop todo in the list
+  * If user drop list in done show animation

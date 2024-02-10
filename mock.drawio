@@ -1,0 +1,79 @@
+<mxfile host="65bd71144e">
+    <diagram id="AYjNxNQVCM5dGQzsaJoF" name="Page-1">
+        <mxGraphModel dx="1874" dy="2488" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="69" value="" style="group" vertex="1" connectable="0" parent="1">
+                    <mxGeometry x="-28" y="-985" width="1132" height="912" as="geometry"/>
+                </mxCell>
+                <mxCell id="66" value="" style="rounded=0;whiteSpace=wrap;html=1;fontSize=17;" vertex="1" parent="69">
+                    <mxGeometry width="1132" height="912" as="geometry"/>
+                </mxCell>
+                <mxCell id="65" value="" style="group" vertex="1" connectable="0" parent="69">
+                    <mxGeometry x="227" y="156" width="672" height="600" as="geometry"/>
+                </mxCell>
+                <mxCell id="45" value="" style="group" vertex="1" connectable="0" parent="65">
+                    <mxGeometry width="192" height="600" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="45">
+                    <mxGeometry y="41.37931034482759" width="192" height="558.6206896551724" as="geometry"/>
+                </mxCell>
+                <mxCell id="33" value="" style="group" vertex="1" connectable="0" parent="45">
+                    <mxGeometry width="61.714285714285715" height="31.03448275862069" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" value="Todo" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=17;" vertex="1" parent="33">
+                    <mxGeometry x="20.57142857142857" width="41.14285714285714" height="31.03448275862069" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#6a00ff;fontColor=#ffffff;strokeColor=#3700CC;" vertex="1" parent="33">
+                    <mxGeometry y="7.758620689655173" width="12" height="12" as="geometry"/>
+                </mxCell>
+                <mxCell id="44" value="Todo" style="rounded=0;whiteSpace=wrap;html=1;fontSize=17;" vertex="1" parent="45">
+                    <mxGeometry x="18.285714285714285" y="72.41379310344828" width="155.42857142857144" height="41.37931034482759" as="geometry"/>
+                </mxCell>
+                <mxCell id="53" value="" style="group" vertex="1" connectable="0" parent="65">
+                    <mxGeometry x="240" width="192" height="600" as="geometry"/>
+                </mxCell>
+                <mxCell id="54" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="53">
+                    <mxGeometry y="41.37931034482759" width="192" height="558.6206896551724" as="geometry"/>
+                </mxCell>
+                <mxCell id="55" value="" style="group" vertex="1" connectable="0" parent="53">
+                    <mxGeometry width="61.714285714285715" height="31.03448275862069" as="geometry"/>
+                </mxCell>
+                <mxCell id="56" value="Doing" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=17;" vertex="1" parent="55">
+                    <mxGeometry x="20.57142857142857" width="41.14285714285714" height="31.03448275862069" as="geometry"/>
+                </mxCell>
+                <mxCell id="57" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" vertex="1" parent="55">
+                    <mxGeometry y="7.758620689655173" width="12" height="12" as="geometry"/>
+                </mxCell>
+                <mxCell id="58" value="Todo" style="rounded=0;whiteSpace=wrap;html=1;fontSize=17;" vertex="1" parent="53">
+                    <mxGeometry x="18.285714285714285" y="72.41379310344828" width="155.42857142857144" height="41.37931034482759" as="geometry"/>
+                </mxCell>
+                <mxCell id="59" value="" style="group" vertex="1" connectable="0" parent="65">
+                    <mxGeometry x="480" width="192" height="600" as="geometry"/>
+                </mxCell>
+                <mxCell id="60" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="59">
+                    <mxGeometry y="41.37931034482759" width="192" height="558.6206896551724" as="geometry"/>
+                </mxCell>
+                <mxCell id="61" value="" style="group" vertex="1" connectable="0" parent="59">
+                    <mxGeometry width="61.71428571428571" height="31.03448275862069" as="geometry"/>
+                </mxCell>
+                <mxCell id="62" value="Done" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=17;" vertex="1" parent="61">
+                    <mxGeometry x="20.571428571428573" width="41.142857142857146" height="31.03448275862069" as="geometry"/>
+                </mxCell>
+                <mxCell id="63" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#008a00;fontColor=#ffffff;strokeColor=#005700;" vertex="1" parent="61">
+                    <mxGeometry y="7.758620689655173" width="12.649098474341192" height="12.649098474341192" as="geometry"/>
+                </mxCell>
+                <mxCell id="64" value="Todo" style="rounded=0;whiteSpace=wrap;html=1;fontSize=17;" vertex="1" parent="59">
+                    <mxGeometry x="18.28571428571429" y="72.41379310344828" width="155.42857142857144" height="41.37931034482759" as="geometry"/>
+                </mxCell>
+                <mxCell id="71" value="e.g oil change" style="html=1;shadow=0;dashed=0;shape=mxgraph.bootstrap.rrect;rSize=5;strokeColor=#999999;fillColor=#ffffff;fontColor=#777777;whiteSpace=wrap;align=left;verticalAlign=middle;fontStyle=0;fontSize=14;spacing=15;" vertex="1" parent="69">
+                    <mxGeometry x="354" y="63" width="200" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="72" value="add todo" style="html=1;shadow=0;dashed=0;shape=mxgraph.bootstrap.rrect;rSize=5;strokeColor=none;fillColor=#0085FC;fontColor=#ffffff;whiteSpace=wrap;align=center;verticalAlign=middle;fontStyle=0;fontSize=14;spacing=14;" vertex="1" parent="69">
+                    <mxGeometry x="570" y="63" width="125" height="40" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
