@@ -6,18 +6,23 @@ import { TodoType } from "../../types";
 import styles from "./Todo.module.scss";
 
 const Todo: React.FC<TodoType & { idx: number }> = ({ id, title, status, idx }) => {
-  console.log({ status });
+  const isDone = status === "done";
 
   return (
     <Draggable key={id} draggableId={id.toString()} index={idx}>
       {(provided) => (
-        <div
+        <li
           {...provided.draggableProps}
           {...provided.dragHandleProps}
+          className={styles.card}
           ref={provided.innerRef}
         >
+          <div className={`${styles.checkedIcon} ${isDone && styles.done}`}>
+            <img src="/icons/icon-check.svg" />
+          </div>
+
           <div>{title}</div>
-        </div>
+        </li>
       )}
     </Draggable>
   )

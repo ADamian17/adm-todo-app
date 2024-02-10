@@ -1,0 +1,53 @@
+@use '../../styles/colors' as *;
+
+.card {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  background-color: #f9f9f9;
+  padding: 2.3rem 1.6rem;
+  border-radius: 0.8rem;
+
+  .checkedIcon {
+    // background-color: var(--primary-card-bg);
+    background-color: red;
+    border-radius: 100%;
+    // border: 1px solid var(--default-checked-border);
+    display: grid;
+    height: 20px;
+    place-content: center;
+    width: 20px;
+    
+    &.done {
+      background-color: $todo-done-bg;
+    }
+    
+    img {
+      display: block;
+      width: 8px;
+      height: 5px;
+    }
+  }
+  // display: flex;
+  // align-items: center;
+  // height: 48px;
+  // padding: 0 20px;
+  // column-gap: 12px;
+
+  // .title {
+  //   font-size: 12px;
+  //   line-height: 12px;
+  //   letter-spacing: -0.166667px;
+
+  //   &.isChecked {
+  //     text-decoration: line-through;
+  //     color: var(--default-line-trough);
+  //   }
+  // }
+
+  // .crossIcon {
+  //   margin-left: auto;
+  //   width: 12px;
+  //   height: 12px;
+  // }
+}

@@ -24,12 +24,16 @@ const Column: React.FC<ColumnType> = ({ headline }) => {
 
       <Droppable droppableId={headline.toLowerCase()}>
         {(provided) => (
-          <div ref={provided.innerRef} {...provided.droppableProps}>
+          <ul
+            {...provided.droppableProps}
+            className={styles.todos}
+            ref={provided.innerRef}
+          >
 
             {todosList}
 
             {provided.placeholder}
-          </div>
+          </ul>
         )}
       </Droppable>
     </div>

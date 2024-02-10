@@ -1,5 +1,14 @@
 @use "colors" as *;
 
+:root.dark {
+  --bg-color: hsl(235, 21%, 11%);
+  --text-color: #{$default-text-color};
+  --color-theme: dark;
+  --primary-card-bg: #{$very-dark-desaturated-blue};
+  --default-checked-border: #{$very-dark-grayish-blue};
+  --default-line-trough: hsl(235, 16%, 43%);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -12,6 +21,11 @@ html {
 }
 
 body {
+  font-family: 'Josefin Sans', sans-serif;
   font-size: 1.6rem;
   min-height: 100vh;
+}
+
+ul {
+  list-style: none;
 }
