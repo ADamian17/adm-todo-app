@@ -2,10 +2,10 @@
 
 :root.dark {
   --bg-color: hsl(235, 21%, 11%);
-  --text-color: #{$default-text-color};
+  --text-color: hsl(234, 39%, 85%);
   --color-theme: dark;
   --primary-card-bg: #{$very-dark-desaturated-blue};
-  --default-checked-border: #{$very-dark-grayish-blue};
+  --default-checked-border: hsl(233, 14%, 35%);
   --default-line-trough: hsl(235, 16%, 43%);
 }
 

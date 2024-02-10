@@ -1,5 +1,6 @@
 import React from "react";
 import { Draggable } from "react-beautiful-dnd";
+import Fireworks from "react-canvas-confetti/dist/presets/fireworks"
 
 import { TodoType } from "../../types";
 
@@ -17,6 +18,9 @@ const Todo: React.FC<TodoType & { idx: number }> = ({ id, title, status, idx }) 
           className={styles.card}
           ref={provided.innerRef}
         >
+          {
+            isDone && <Fireworks autorun={{ speed: 3, duration: 1000 }} />
+          }
           <div className={`${styles.checkedIcon} ${isDone && styles.done}`}>
             <img src="/icons/icon-check.svg" />
           </div>
