@@ -1,12 +1,34 @@
 @use "colors" as *;
 
-:root.dark {
-  --bg-color: hsl(235, 21%, 11%);
-  --text-color: hsl(234, 39%, 85%);
-  --color-theme: dark;
-  --primary-card-bg: #{$very-dark-desaturated-blue};
-  --default-checked-border: hsl(233, 14%, 35%);
-  --default-line-trough: hsl(235, 16%, 43%);
+:root {
+  --black: hsl(237, 100%, 4%);
+  --white: hsl(0, 0%, 100%);
+
+  --main-Purple: hsl(242, 48%, 58%);
+  --main-purple-hover: hsl(243, 100%, 82%);
+
+  --dark-grey: hsl(235, 12%, 19%);
+  --medium-grey: hsl(216, 15%, 57%);
+
+  --very-dark-grey-dark-bg: hsl(235, 16%, 15%);
+  --light-grey-light-bg: hsl(220, 69%, 97%);
+
+  --lines-dark: hsl(236, 11%, 27%);
+  --lines-light: hsl(221, 69%, 94%);
+
+  --red: hsl(0, 78%, 63%);
+  --red-hover: hsl(0, 100%, 80%);
+
+  --todo-done-bg: linear-gradient(135deg,
+        hsl(192, 100%, 67%) 0%,
+        hsl(280, 87%, 65%) 100%);
+
+  /* Theme */
+  --accent-bg: var(--white);
+  --default-bg: var(--light-grey-light-bg);
+  --logo-headline-txt-color: var(--black);
+  --line-accent: var(--lines-light);
+  --text-color: var(--black);
 }
 
 * {
@@ -20,7 +42,22 @@ html {
   scroll-behavior: smooth;
 }
 
+html.light {
+  color-scheme: light;
+}
+
+html.dark {
+  --accent-bg: var(--dark-grey, hsl(235, 12%, 19%));
+  --default-bg: var(--very-dark-grey-dark-bg);
+  --logo-headline-txt-color: var(--white);
+  --line-accent: var(--lines-dark);
+  --text-color: var(--white);
+
+  color-scheme: dark;
+}
+
 body {
+  color: var(--text-color);
   font-family: 'Josefin Sans', sans-serif;
   font-size: 1.6rem;
   min-height: 100vh;

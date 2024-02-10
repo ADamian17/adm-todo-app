@@ -1,0 +1,55 @@
+@use "../../styles/media-query" as *;
+
+.hero {
+  align-items: center;
+  display: grid;
+  height: 20rem;
+  align-content: center;
+  place-items: center;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+.bg {
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  grid-row: 1 / -1;
+  z-index: -1;
+}
+
+  .nav {
+    grid-row: 1 / -1;
+
+    align-items: center;
+    color: var(--primary-white);
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 54rem;
+
+  
+    .headline {
+      width: 109px;
+    }
+  
+    .icon {
+      fill: currentColor;
+      width: 20px;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  
+    .headline,
+    .icon {
+      height: 20px;
+      fill: #fff;
+    }
+  }
+
+  @include media-query("lg") {
+    height: 30rem;
+  }
+}

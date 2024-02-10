@@ -23,11 +23,12 @@ const Column: React.FC<ColumnType> = ({ headline }) => {
       <h2>{headline}</h2>
 
       <Droppable droppableId={headline.toLowerCase()}>
-        {(provided) => (
+        {(provided, snapshot) => (
           <ul
             {...provided.droppableProps}
             className={styles.todos}
             ref={provided.innerRef}
+            style={{ backgroundColor: snapshot.isDraggingOver ? 'blue' : 'grey' }}
           >
 
             {todosList}

@@ -17,7 +17,7 @@ make whatever UI and UX decisions you want to make it usable. Don't worry, we ar
 * vite
 * zustand
 * sass
-* [react-beautiful-dnd](https://github.com/atlassian/react-beautiful-dnd/tree/master)
+* [react-beautiful-dnd](https://github.com/atlassian/react-beautiful-dnd/blob/master/docs/api/drag-drop-context.md)
 * [react-canvas-confetti](https://www.npmjs.com/package/react-canvas-confetti)
 
 ## Usage

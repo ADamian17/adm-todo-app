@@ -1,4 +1,4 @@
-import { DropResult } from "react-beautiful-dnd";
+import { DropResult, OnDragEndResponder } from "react-beautiful-dnd";
 
 export type TodoType = {
   id: number;
@@ -16,3 +16,10 @@ export type SetUpdatedColumnsFn = (props: {
   columns: UseColumnStoreState["columns"];
   result: DropResult;
 }) => UseColumnStoreState["columns"];
+
+export type UseColumnStoreActions = {
+  addTodo: (todo: TodoType) => void;
+  getColumn: (target: string) => TodosType;
+  getColumns: () => string[];
+  updateColumnOnDrag: OnDragEndResponder;
+};

@@ -1,12 +1,12 @@
-import TodoForm from './components/TodoForm'
+import MainHeader from './components/MainHeader'
+import ThemeProvider from './components/ThemeProvider'
 import TodosContainer from './containers/TodosContainer'
 
 function App() {
   return (
     <>
-      <header>
-        <TodoForm />
-      </header>
+      <ThemeProvider />
+      <MainHeader />
 
       <TodosContainer />
     </>

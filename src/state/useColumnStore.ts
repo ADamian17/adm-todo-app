@@ -1,20 +1,8 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
-import { TodoType, TodosType } from "../types";
-import { OnDragEndResponder } from "react-beautiful-dnd";
 import { setUpdatedColumns } from "../helpers/setUpdatedColumns";
-
-type UseColumnStoreState = {
-  columns: Record<string, TodoType[]>;
-};
-
-type UseColumnStoreActions = {
-  addTodo: (todo: TodoType) => void;
-  getColumn: (target: string) => TodosType;
-  getColumns: () => string[];
-  updateColumnOnDrag: OnDragEndResponder;
-};
+import { UseColumnStoreActions, UseColumnStoreState } from "../types";
 
 export const useTodoListsStore = create(
   persist<UseColumnStoreState & UseColumnStoreActions>(

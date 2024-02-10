@@ -7,46 +7,41 @@
   background-color: #f9f9f9;
   padding: 2.3rem 1.6rem;
   border-radius: 0.8rem;
+  background-color: var(--accent-bg);
+  text-transform: capitalize;
 
   .checkedIcon {
-    background-color: var(--primary-card-bg);
+    background-color: var(--accent-bg);
     border-radius: 100%;
-    // border: 1px solid var(--default-checked-border);
+    border: 1px solid var(--line-accent);
     display: grid;
     height: 20px;
     place-content: center;
     width: 20px;
     
-    &.done {
-      background-color: $todo-done-bg;
-    }
-    
     img {
-      display: block;
+      display: none;
       width: 8px;
       height: 5px;
     }
+
+    &.done {
+      background-image: var(--todo-done-bg);
+
+      img {
+        display: block;
+      }
+    }
   }
-  // display: flex;
-  // align-items: center;
-  // height: 48px;
-  // padding: 0 20px;
-  // column-gap: 12px;
 
-  // .title {
-  //   font-size: 12px;
-  //   line-height: 12px;
-  //   letter-spacing: -0.166667px;
+  .title {
+    font-size: 12px;
+    line-height: 12px;
+    letter-spacing: -0.166667px;
 
-  //   &.isChecked {
-  //     text-decoration: line-through;
-  //     color: var(--default-line-trough);
-  //   }
-  // }
-
-  // .crossIcon {
-  //   margin-left: auto;
-  //   width: 12px;
-  //   height: 12px;
-  // }
+    &.isChecked {
+      text-decoration: line-through;
+      color: var(--default-line-trough);
+    }
+  }
 }
