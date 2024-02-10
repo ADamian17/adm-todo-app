@@ -3,14 +3,15 @@ import { persist } from "zustand/middleware";
 
 import { TodoType, TodosType } from "../types";
 import { OnDragEndResponder } from "react-beautiful-dnd";
+import { setUpdatedColumns } from "../helpers/setUpdatedColumns";
 
 type UseColumnStoreState = {
   columns: Record<string, TodoType[]>;
 };
 
 type UseColumnStoreActions = {
-  getColumns: () => string[];
   getColumn: (target: string) => TodosType;
+  getColumns: () => string[];
   updateColumnOnDrag: OnDragEndResponder;
 };
 
@@ -49,38 +50,8 @@ export const useTodoListsStore = create(
         return columns[target];
       },
       updateColumnOnDrag: (result) => {
-        if (!result.destination) return;
         const { columns } = get();
-        const {
-          source: { droppableId: sourceColId, index: sourceIdx },
-          destination: { droppableId: destinationColId, index: destinationIdx },
-        } = result;
-        const prevTodos = columns[sourceColId];
-        const sourceTodos = prevTodos.map((col) => col);
-        const [todo] = sourceTodos.splice(sourceIdx, 1);
-        let updatedColumns: UseColumnStoreState["columns"];
-
-        if (sourceColId !== destinationColId) {
-          const destinationTodos = columns[destinationColId].map((col) => col);
-
-          todo.status = destinationColId;
-          destinationTodos.splice(destinationIdx, 0, todo);
-
-          updatedColumns = {
-            ...columns,
-            [sourceColId]: sourceTodos,
-            [destinationColId]: destinationTodos,
-          };
-
-          return set({ columns: updatedColumns });
-        }
-
-        sourceTodos.splice(destinationIdx, 0, todo);
-
-        updatedColumns = {
-          ...columns,
-          [sourceColId]: sourceTodos,
-        };
+        const updatedColumns = setUpdatedColumns({ result, columns });
 
         set({ columns: updatedColumns });
       },

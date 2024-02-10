@@ -19,7 +19,7 @@ const Column: React.FC<ColumnType> = ({ headline }) => {
   ));
 
   return (
-    <Droppable droppableId="todo">
+    <Droppable droppableId={headline.toLowerCase()}>
       {(provided) => (
         <div ref={provided.innerRef} {...provided.droppableProps}>
           <h2>{headline}</h2>
