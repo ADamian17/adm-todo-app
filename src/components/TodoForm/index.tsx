@@ -1,12 +1,18 @@
-import React, { ChangeEventHandler, FormEventHandler, useState } from "react";
+import { ChangeEventHandler, FormEventHandler, useState } from "react";
+
+import { Todo } from "../../helpers/Todo";
+import { useTodoListsStore } from "../../state/useColumnStore";
 
 import styles from "./TodoForm.module.scss";
 
 const TodoForm = () => {
+  const { addTodo } = useTodoListsStore(state => state)
   const [inputVal, setInputVal] = useState("")
   const [inputError, setInputError] = useState(false)
 
   const handleChange: ChangeEventHandler<HTMLInputElement> = (e) => {
+    if (inputError) setInputError(false)
+
     setInputVal(e.target.value)
   }
 
@@ -18,7 +24,8 @@ const TodoForm = () => {
       return
     }
 
-    console.log(e);
+    addTodo(new Todo(inputVal))
+    setInputVal("")
   }
 
   return (

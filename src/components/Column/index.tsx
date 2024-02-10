@@ -19,17 +19,20 @@ const Column: React.FC<ColumnType> = ({ headline }) => {
   ));
 
   return (
-    <Droppable droppableId={headline.toLowerCase()}>
-      {(provided) => (
-        <div ref={provided.innerRef} {...provided.droppableProps}>
-          <h2>{headline}</h2>
+    <div>
+      <h2>{headline}</h2>
 
-          {todosList}
+      <Droppable droppableId={headline.toLowerCase()}>
+        {(provided) => (
+          <div ref={provided.innerRef} {...provided.droppableProps}>
 
-          {provided.placeholder}
-        </div>
-      )}
-    </Droppable>
+            {todosList}
+
+            {provided.placeholder}
+          </div>
+        )}
+      </Droppable>
+    </div>
   )
 };
 

@@ -10,6 +10,7 @@ type UseColumnStoreState = {
 };
 
 type UseColumnStoreActions = {
+  addTodo: (todo: TodoType) => void;
   getColumn: (target: string) => TodosType;
   getColumns: () => string[];
   updateColumnOnDrag: OnDragEndResponder;
@@ -19,25 +20,20 @@ export const useTodoListsStore = create(
   persist<UseColumnStoreState & UseColumnStoreActions>(
     (set, get) => ({
       columns: {
-        todo: [
-          {
-            id: 1,
-            title: "Task 1",
-            status: "todo",
-          },
-          {
-            id: 2,
-            title: "Task 2",
-            status: "todo",
-          },
-          {
-            id: 3,
-            title: "Task 3",
-            status: "todo",
-          },
-        ],
+        todo: [],
         doing: [],
         done: [],
+      },
+      addTodo: (todo) => {
+        if (!todo) return;
+
+        const { columns } = get();
+        const updatedColumns = {
+          ...columns,
+          todo: [...columns.todo, todo],
+        };
+
+        set({ columns: updatedColumns });
       },
       getColumns: () => {
         const { columns } = get();
