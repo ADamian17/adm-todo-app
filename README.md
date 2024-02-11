@@ -22,6 +22,12 @@ make whatever UI and UX decisions you want to make it usable. Don't worry, we ar
 
 ## Usage
 
+### Add Todo 
+
+https://github.com/ADamian17/adm-todo-app/assets/52466233/4dfbf72b-dbfb-4e16-9195-5c6712d49d6c
+
+* User can add todo by clicking add todo or pressing enter
+
 * Clone repo
 * Install dependencies ``yarn or yarn install``
 
