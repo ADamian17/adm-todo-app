@@ -1,5 +1,58 @@
-.hero {
-  // background-image: var(--bg-hero);
-  background-color: red; 
-  height: 30rem;
+.wrapper {
+  width: 100%;
+  display: flex;
+  max-width: 54rem;
+  height: 4.8rem;
+  gap: 1.8rem;
+
+  .inputWrapper {
+    flex: 1;
+    display: grid;
+    align-items: center;
+
+    .textField {
+      border-radius: 4px;
+      border: 1px solid transparent;
+      height: 100%;
+      padding: 1.2rem;
+      width: 100%;
+      box-shadow: 0 3.5rem 5rem -1.5rem rgba( #000000, 50%);
+
+      &.error {
+       border: 1px solid var(--red);
+      }
+    }
+
+    .textFieldError {
+      color: var(--red);
+      justify-self: end;
+      margin-right: 1.2rem;
+    }
+
+    .textField,
+    .textFieldError {
+      grid-row: 1;
+      grid-column: 1;
+    }
+  }
+
+  .submitBtn {
+    border-radius: 0.8rem;
+    border: none;
+    color: #fff;
+    background-color: #ad1fea;
+    font-size: 1.4rem;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 19px;
+    overflow: hidden;
+    padding: 1rem 1.6rem;
+    position: relative;
+    text-transform: capitalize;
+    transition: all .2s linear;
+
+    &:hover {
+      background-color: #be4eee;
+    }
+  }
 }

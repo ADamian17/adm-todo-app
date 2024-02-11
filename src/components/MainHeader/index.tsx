@@ -13,7 +13,10 @@ const MainHeader = () => {
   }
 
   return (
-    <header className={styles.hero} style={{ backgroundImage: `url(images/bg-desktop-${theme}.jpg)` }}>
+    <header
+      className={styles.hero}
+      style={{ backgroundImage: `url(images/bg-desktop-${theme}.jpg)` }}
+    >
 
       <nav className={styles.nav}>
         <svg className={styles.headline}>

@@ -29,17 +29,26 @@ const TodoForm = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
+    <form
+      onSubmit={handleSubmit}
+      className={styles.wrapper}
+    >
+      <div className={styles.inputWrapper}>
         <input
+          className={`${styles.textField} ${inputError && styles.error}`}
           onChange={handleChange}
           placeholder="e.g oil change"
           type="text"
           value={inputVal}
         />
-        {inputError && <p>Field required</p>}
+        {inputError && <p className={styles.textFieldError}>Field required</p>}
       </div>
-      <input type="submit" value="add todo" />
+
+      <input
+        className={styles.submitBtn}
+        type="submit"
+        value="add todo"
+      />
     </form>
   )
 };

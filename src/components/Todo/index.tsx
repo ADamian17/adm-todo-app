@@ -6,6 +6,8 @@ import { TodoType } from "../../types";
 
 import styles from "./Todo.module.scss";
 
+/* LINK https://github.com/atlassian/react-beautiful-dnd/blob/master/docs/api/draggable.md */
+
 const Todo: React.FC<TodoType & { idx: number }> = ({ id, title, status, idx }) => {
   const isDone = status === "done";
 
@@ -25,7 +27,7 @@ const Todo: React.FC<TodoType & { idx: number }> = ({ id, title, status, idx }) 
             <img src="/icons/icon-check.svg" />
           </div>
 
-          <div>{title}</div>
+          <p className={`${styles.title} ${isDone && styles.lineThrough}`}>{title}</p>
         </li>
       )}
     </Draggable>

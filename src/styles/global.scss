@@ -47,12 +47,11 @@ html.light {
 }
 
 html.dark {
-  --accent-bg: var(--dark-grey, hsl(235, 12%, 19%));
+  --accent-bg: var(--dark-grey);
   --default-bg: var(--very-dark-grey-dark-bg);
   --logo-headline-txt-color: var(--white);
   --line-accent: var(--lines-dark);
   --text-color: var(--white);
-
   color-scheme: dark;
 }
 

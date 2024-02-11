@@ -35,13 +35,13 @@
   }
 
   .title {
-    font-size: 12px;
-    line-height: 12px;
+    font-size: 1.4rem;
+    line-height: 1.4rem;
     letter-spacing: -0.166667px;
 
-    &.isChecked {
+    &.lineThrough {
       text-decoration: line-through;
-      color: var(--default-line-trough);
+      opacity: 0.5;
     }
   }
 }
