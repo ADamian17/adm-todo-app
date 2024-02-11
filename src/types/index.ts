@@ -17,10 +17,20 @@ export type SetUpdatedColumnsFn = (props: {
   result: DropResult;
 }) => UseColumnStoreState["columns"];
 
+type RemoveTodoArgs = {
+  column: string;
+  idx: number;
+};
+
+type UpdateTodoArgs = RemoveTodoArgs & {
+  title: string;
+};
+
 export type UseColumnStoreActions = {
   addTodo: (todo: TodoType) => void;
   getColumn: (target: string) => TodosType;
   getColumns: () => string[];
-  removeTodo: (column: string, idx: number) => void;
+  removeTodo: ({ column, idx }: RemoveTodoArgs) => void;
   updateColumnOnDrag: OnDragEndResponder;
+  updateTodo: ({ column, idx, title }: UpdateTodoArgs) => void;
 };

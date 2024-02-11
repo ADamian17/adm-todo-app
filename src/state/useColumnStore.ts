@@ -33,7 +33,7 @@ export const useTodoListsStore = create(
 
         return columns[target];
       },
-      removeTodo: (column, idx) => {
+      removeTodo: ({ column, idx }) => {
         const { columns } = get();
         const prevTodos = columns[column];
         const tempTodos = prevTodos.filter((_, index) => index !== idx);
@@ -50,6 +50,21 @@ export const useTodoListsStore = create(
         const updatedColumns = setUpdatedColumns({ result, columns });
 
         set({ columns: updatedColumns });
+      },
+      updateTodo: ({ column, title, idx }) => {
+        const { columns } = get();
+        const prevTodos = columns[column];
+        const foundTodo = prevTodos[idx];
+
+        foundTodo.title = title;
+        prevTodos[idx] = foundTodo;
+
+        const updatedTodos = {
+          ...columns,
+          [column]: prevTodos,
+        };
+
+        set({ columns: updatedTodos });
       },
     }),
     {

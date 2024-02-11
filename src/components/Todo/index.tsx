@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ChangeEventHandler, FormEventHandler, useState } from "react";
 import { Draggable } from "react-beautiful-dnd";
 import Fireworks from "react-canvas-confetti/dist/presets/fireworks"
 
@@ -10,11 +10,36 @@ import { useTodoListsStore } from "../../state/useColumnStore";
 /* LINK https://github.com/atlassian/react-beautiful-dnd/blob/master/docs/api/draggable.md */
 
 const Todo: React.FC<TodoType & { idx: number }> = ({ id, title, status, idx }) => {
-  const { removeTodo } = useTodoListsStore(state => state)
+  const { removeTodo, updateTodo } = useTodoListsStore(state => state)
+  const [allowEdit, setAllowEdit] = useState(false)
+  const [todoTitle, setTodoTitle] = useState(title)
   const isDone = status === "done";
 
   const handleDelete = () => {
-    removeTodo(status, idx)
+    removeTodo({
+      column: status,
+      idx
+    })
+  }
+
+  const handleUpdateTodo: FormEventHandler = (e) => {
+    e.preventDefault()
+
+    updateTodo({
+      column: status,
+      idx,
+      title: todoTitle
+    })
+
+    setAllowEdit(false)
+  }
+
+  const handleChange: ChangeEventHandler<HTMLInputElement> = (e) => {
+    setTodoTitle(e.target.value)
+  }
+
+  const handleEditClick = () => {
+    setAllowEdit(prev => !prev)
   }
 
   return (
@@ -33,11 +58,29 @@ const Todo: React.FC<TodoType & { idx: number }> = ({ id, title, status, idx }) 
             <img src="/icons/icon-check.svg" />
           </div>
 
-          <p className={`${styles.title} ${isDone && styles.lineThrough}`}>{title}</p>
+          <form onSubmit={handleUpdateTodo} className={styles.titleWrapper}>
+            <input
+              className={`${styles.title} ${allowEdit && styles.isEdit} ${isDone && !allowEdit && styles.lineThrough}`}
+              onChange={handleChange}
+              placeholder="e.g oil change"
+              readOnly={!allowEdit}
+              value={todoTitle}
+            />
+          </form>
 
-          <svg className={styles.crossIcon} onClick={handleDelete}>
-            <use href="/icons/main-icons.svg#cross"></use>
-          </svg>
+          <div className={styles.ctaGroup}>
+            <button className={styles.cta}>
+              <svg className={styles.icon} onClick={handleEditClick}>
+                <use href="/icons/main-icons.svg#pencil"></use>
+              </svg>
+            </button>
+
+            <button className={styles.cta}>
+              <svg className={styles.icon} onClick={handleDelete}>
+                <use href="/icons/main-icons.svg#bin"></use>
+              </svg>
+            </button>
+          </div>
         </li>
       )}
     </Draggable>

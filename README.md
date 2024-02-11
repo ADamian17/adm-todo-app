@@ -27,11 +27,15 @@ make whatever UI and UX decisions you want to make it usable. Don't worry, we ar
 
 ## User Stories
 
-* [ ] When user land on the page with three vertical list ``Todo``, ``Doing``, ``Done``
-* [ ] User can create a todo by using the form
-  * [ ] Todo can only be added if the title is not empty
+* [x] When user land on the page with three vertical list ``Todo``, ``Doing``, ``Done``
+* [x] User can create a todo by using the form
+  * [x] Todo can only be added if the title is not empty
+  * [x] If title is empty add text error
+  * [x] By default todo is added to the ``Todo`` list
+* [x] User can delete a todo by clicking in the icon cross
+* [ ] User can update a todo title by double clicking the todo
   * [ ] If title is empty add text error
-  * [ ] By default todo is added to the ``Todo`` list
-* [ ] User can drag and drop between the lists
-  * [ ] Update todo status when user drop todo in the list
-  * [ ] If user drop list in done show animation
+* [x] User can drag and drop between the lists
+  * [x] Update todo status when user drop todo in the list
+  * [x] If user drop list in done show animation
+  * [ ] animation should only run once
