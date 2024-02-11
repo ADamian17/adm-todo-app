@@ -1,11 +1,11 @@
-@use "colors" as *;
-
 :root {
   --black: hsl(237, 100%, 4%);
   --white: rgb(255, 255, 255);
 
-  --main-Purple: hsl(242, 48%, 58%);
-  --main-purple-hover: hsl(243, 100%, 82%);
+  --blue: hsl(192, 100%, 67%);
+  --orange: hsl(14, 83%, 74%);
+  --purple: hsl(280, 87%, 65%);
+  --red: hsl(0, 67%, 53%);
 
   --dark-grey: hsl(235, 12%, 19%);
   --medium-grey: hsl(216, 15%, 57%);
@@ -16,20 +16,13 @@
   --lines-dark: hsl(236, 11%, 27%);
   --lines-light: hsl(221, 69%, 94%);
 
-  --red: hsl(0, 78%, 63%);
-  --red-hover: hsl(0, 100%, 80%);
-
-  --todo-done-bg: linear-gradient(
-    135deg,
-    hsl(192, 100%, 67%) 0%,
-    hsl(280, 87%, 65%) 100%
-  );
+  --todo-done-bg: linear-gradient(135deg, var(--blue) 0%, var(--purple) 100%);
 
   /* Theme */
   --accent-bg: var(--white);
   --default-bg: var(--light-grey-light-bg);
-  --logo-headline-txt-color: var(--black);
   --line-accent: var(--lines-light);
+  --logo-headline-txt-color: var(--black);
   --text-color: var(--black);
 }
 
@@ -62,6 +55,7 @@ body {
   font-family: "Josefin Sans", sans-serif;
   font-size: 1.6rem;
   min-height: 100vh;
+  background-color: var(--default-bg);
 }
 
 ul {

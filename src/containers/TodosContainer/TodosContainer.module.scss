@@ -1,3 +1,4 @@
+@use "sass:map";
 @use "../../styles/media-query" as *;
 
 .wrapper {
@@ -5,13 +6,28 @@
   gap: 2.4rem;
   max-width: 114rem;
   padding: 4rem 2.4rem;
-  
-  @include media-query("lg"){
+
+  /* LINK https://sass-lang.com/documentation/values/maps/ */
+  $colors: (
+    1: var(--blue),
+    2: var(--orange),
+    3: var(--purple),
+  );
+
+  @for $i from 1 through 3 {
+    :nth-child(#{$i}) {
+      [class*="headline"]::before {
+        background-color: map.get($colors, $i);
+      }
+    }
+  }
+
+  @include media-query("lg") {
     margin: 0 auto;
     grid-template-columns: repeat(3, 1fr);
   }
 
   @include media-query("xl") {
-    padding: 8rem 0; 
+    padding: 8rem 0;
   }
 }

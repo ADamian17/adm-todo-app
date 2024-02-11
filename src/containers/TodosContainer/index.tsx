@@ -12,7 +12,7 @@ const TodosContainer = () => {
   const columns = getColumns();
 
   const columnsList = columns && columns.map(column => (
-    <Column key={column} headline={column} />
+    <Column key={column} headline={column} columnAccentColor={''} />
   ))
 
   return (
