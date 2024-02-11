@@ -2,7 +2,7 @@
 
 :root {
   --black: hsl(237, 100%, 4%);
-  --white: hsl(0, 0%, 100%);
+  --white: rgb(255, 255, 255);
 
   --main-Purple: hsl(242, 48%, 58%);
   --main-purple-hover: hsl(243, 100%, 82%);
@@ -11,7 +11,7 @@
   --medium-grey: hsl(216, 15%, 57%);
 
   --very-dark-grey-dark-bg: hsl(235, 16%, 15%);
-  --light-grey-light-bg: hsl(220, 69%, 97%);
+  --light-grey-light-bg: hsl(218, 73%, 97%);
 
   --lines-dark: hsl(236, 11%, 27%);
   --lines-light: hsl(221, 69%, 94%);
@@ -19,9 +19,11 @@
   --red: hsl(0, 78%, 63%);
   --red-hover: hsl(0, 100%, 80%);
 
-  --todo-done-bg: linear-gradient(135deg,
-        hsl(192, 100%, 67%) 0%,
-        hsl(280, 87%, 65%) 100%);
+  --todo-done-bg: linear-gradient(
+    135deg,
+    hsl(192, 100%, 67%) 0%,
+    hsl(280, 87%, 65%) 100%
+  );
 
   /* Theme */
   --accent-bg: var(--white);
@@ -57,7 +59,7 @@ html.dark {
 
 body {
   color: var(--text-color);
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   font-size: 1.6rem;
   min-height: 100vh;
 }

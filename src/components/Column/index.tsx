@@ -8,27 +8,31 @@ import styles from "./Column.module.scss";
 
 type ColumnType = {
   headline: string
+  columnAccentColor: string
 };
 
-const Column: React.FC<ColumnType> = ({ headline }) => {
+/* LINK https://github.com/atlassian/react-beautiful-dnd/blob/master/docs/api/droppable.md */
+
+const Column: React.FC<ColumnType> = ({ headline, columnAccentColor }) => {
   const { getColumn } = useTodoListsStore()
   const columnData = getColumn(headline.toLowerCase())
+
+  const componentStyles = { ["--column-accent-color"]: columnAccentColor } as React.CSSProperties
 
   const todosList = columnData && columnData.map((todo, idx) => (
     <Todo key={todo.id} {...todo} idx={idx} />
   ));
 
   return (
-    <div>
-      <h2>{headline}</h2>
+    <section className={styles.column} style={componentStyles}>
+      <p className={styles.headline}>{headline}</p>
 
       <Droppable droppableId={headline.toLowerCase()}>
         {(provided, snapshot) => (
           <ul
             {...provided.droppableProps}
-            className={styles.todos}
+            className={`${styles.todos} ${snapshot.isDraggingOver && styles.isDraggingOver}`}
             ref={provided.innerRef}
-            style={{ backgroundColor: snapshot.isDraggingOver ? 'blue' : 'grey' }}
           >
 
             {todosList}
@@ -37,7 +41,7 @@ const Column: React.FC<ColumnType> = ({ headline }) => {
           </ul>
         )}
       </Droppable>
-    </div>
+    </section>
   )
 };
 

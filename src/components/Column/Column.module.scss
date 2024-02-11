@@ -1,4 +1,35 @@
-.todos {
+.column {
   display: grid;
-  row-gap: 1.8rem;
+  grid-auto-rows: max-content;
+  row-gap: 2.4rem;
+
+  .headline,
+  .todos {
+    padding: 0.8rem;
+  }
+
+  .headline {
+    text-transform: capitalize;
+    color: var(--medium-grey);
+    display: flex;
+    column-gap: 1.2rem;
+
+    &::before {
+      content: "";
+      background-color: red;
+      border-radius: 100%;
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
+
+  .todos {
+    display: grid;
+    row-gap: 1.8rem;
+    border-radius: 0.8rem;
+
+    &.isDraggingOver {
+      background-color: rgba(111, 110, 110, 0.598);
+    }
+  }
 }

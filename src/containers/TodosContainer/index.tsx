@@ -5,6 +5,8 @@ import Column from '../../components/Column';
 
 import styles from "./TodosContainer.module.scss";
 
+/* LINK https://github.com/atlassian/react-beautiful-dnd/blob/master/docs/api/drag-drop-context.md */
+
 const TodosContainer = () => {
   const { getColumns, updateColumnOnDrag } = useTodoListsStore()
   const columns = getColumns();

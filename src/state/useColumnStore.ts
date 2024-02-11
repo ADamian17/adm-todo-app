@@ -33,6 +33,18 @@ export const useTodoListsStore = create(
 
         return columns[target];
       },
+      removeTodo: (column, idx) => {
+        const { columns } = get();
+        const prevTodos = columns[column];
+        const tempTodos = prevTodos.filter((_, index) => index !== idx);
+
+        const updatedTodos = {
+          ...columns,
+          [column]: tempTodos,
+        };
+
+        set({ columns: updatedTodos });
+      },
       updateColumnOnDrag: (result) => {
         const { columns } = get();
         const updatedColumns = setUpdatedColumns({ result, columns });

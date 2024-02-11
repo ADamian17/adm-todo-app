@@ -21,5 +21,6 @@ export type UseColumnStoreActions = {
   addTodo: (todo: TodoType) => void;
   getColumn: (target: string) => TodosType;
   getColumns: () => string[];
+  removeTodo: (column: string, idx: number) => void;
   updateColumnOnDrag: OnDragEndResponder;
 };

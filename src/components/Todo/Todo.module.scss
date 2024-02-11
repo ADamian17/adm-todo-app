@@ -1,14 +1,12 @@
-@use '../../styles/colors' as *;
-
 .card {
+  align-items: center;
+  background-color: var(--accent-bg);
+  border-radius: 0.8rem;
   display: flex;
   gap: 1rem;
-  align-items: center;
-  background-color: #f9f9f9;
   padding: 2.3rem 1.6rem;
-  border-radius: 0.8rem;
-  background-color: var(--accent-bg);
   text-transform: capitalize;
+  border: 1px solid var(--line-accent);
 
   .checkedIcon {
     background-color: var(--accent-bg);
@@ -18,7 +16,7 @@
     height: 20px;
     place-content: center;
     width: 20px;
-    
+
     img {
       display: none;
       width: 8px;
@@ -42,6 +40,17 @@
     &.lineThrough {
       text-decoration: line-through;
       opacity: 0.5;
+    }
+  }
+
+  .crossIcon {
+    margin-left: auto;
+    width: 1.2rem;
+    height: 1.2rem;
+    fill: currentColor;
+
+    &:hover {
+      cursor: pointer;
     }
   }
 }

@@ -5,11 +5,17 @@ import Fireworks from "react-canvas-confetti/dist/presets/fireworks"
 import { TodoType } from "../../types";
 
 import styles from "./Todo.module.scss";
+import { useTodoListsStore } from "../../state/useColumnStore";
 
 /* LINK https://github.com/atlassian/react-beautiful-dnd/blob/master/docs/api/draggable.md */
 
 const Todo: React.FC<TodoType & { idx: number }> = ({ id, title, status, idx }) => {
+  const { removeTodo } = useTodoListsStore(state => state)
   const isDone = status === "done";
+
+  const handleDelete = () => {
+    removeTodo(status, idx)
+  }
 
   return (
     <Draggable key={id} draggableId={id.toString()} index={idx}>
@@ -28,6 +34,10 @@ const Todo: React.FC<TodoType & { idx: number }> = ({ id, title, status, idx }) 
           </div>
 
           <p className={`${styles.title} ${isDone && styles.lineThrough}`}>{title}</p>
+
+          <svg className={styles.crossIcon} onClick={handleDelete}>
+            <use href="/icons/main-icons.svg#cross"></use>
+          </svg>
         </li>
       )}
     </Draggable>
