@@ -57,6 +57,14 @@
         opacity: 0.5;
       }
 
+      &.error {
+        color: var(--red);
+
+        &::placeholder {
+          color: currentColor;
+        }
+      }
+
       &:focus,
       &:active,
       &:read-only {

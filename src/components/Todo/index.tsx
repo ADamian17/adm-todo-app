@@ -13,6 +13,9 @@ const Todo: React.FC<TodoType & { idx: number }> = ({ id, title, status, idx }) 
   const { removeTodo, updateTodo } = useTodoListsStore(state => state)
   const [allowEdit, setAllowEdit] = useState(false)
   const [todoTitle, setTodoTitle] = useState(title)
+  const [error, setError] = useState(false)
+  const PLACEHOLDER_TEXT = "e.g oil change"
+  const [placeHolderText, setPlaceHolderText] = useState(PLACEHOLDER_TEXT)
   const isDone = status === "done";
 
   const handleDelete = () => {
@@ -25,6 +28,12 @@ const Todo: React.FC<TodoType & { idx: number }> = ({ id, title, status, idx }) 
   const handleUpdateTodo: FormEventHandler = (e) => {
     e.preventDefault()
 
+    if (todoTitle.trim() === "") {
+      setError(true)
+      setPlaceHolderText("Required Field")
+      return;
+    }
+
     updateTodo({
       column: status,
       idx,
@@ -35,11 +44,17 @@ const Todo: React.FC<TodoType & { idx: number }> = ({ id, title, status, idx }) 
   }
 
   const handleChange: ChangeEventHandler<HTMLInputElement> = (e) => {
+    if (error) {
+      setError(false)
+      setPlaceHolderText(PLACEHOLDER_TEXT)
+    }
+
     setTodoTitle(e.target.value)
   }
 
   const handleEditClick = () => {
     setAllowEdit(prev => !prev)
+    setTodoTitle(title)
   }
 
   return (
@@ -60,9 +75,9 @@ const Todo: React.FC<TodoType & { idx: number }> = ({ id, title, status, idx }) 
 
           <form onSubmit={handleUpdateTodo} className={styles.titleWrapper}>
             <input
-              className={`${styles.title} ${allowEdit && styles.isEdit} ${isDone && !allowEdit && styles.lineThrough}`}
+              className={`${styles.title} ${allowEdit && styles.isEdit} ${error && styles.error} ${isDone && !allowEdit && styles.lineThrough}`}
               onChange={handleChange}
-              placeholder="e.g oil change"
+              placeholder={placeHolderText}
               readOnly={!allowEdit}
               value={todoTitle}
             />
