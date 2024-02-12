@@ -7,6 +7,7 @@ const EditTodoForm = () => {
     allowEdit,
     error,
     handleChange,
+    handleEditClick,
     handleUpdateTodo,
     isDone,
     placeHolderText,
@@ -14,15 +15,24 @@ const EditTodoForm = () => {
   } = useTodoCtx();
 
   return (
-    <form onSubmit={handleUpdateTodo} className={styles.form}>
-      <input
-        className={`${styles.textField} ${allowEdit && styles.isEdit} ${error && allowEdit && styles.error} ${isDone && !allowEdit && styles.lineThrough}`}
-        onChange={handleChange}
-        placeholder={placeHolderText}
-        readOnly={!allowEdit}
-        value={todoTitle}
-      />
-    </form>
+    <>
+      <form onSubmit={handleUpdateTodo} className={`${styles.form} ${allowEdit && styles.isEdit}`}>
+        <input
+          className={`${styles.textField} ${error && allowEdit && styles.error} ${isDone && !allowEdit && styles.lineThrough}`}
+          onChange={handleChange}
+          placeholder={placeHolderText}
+          readOnly={!allowEdit}
+          value={todoTitle}
+        />
+
+        {allowEdit && (
+          <div>
+            <input type="submit" value="save" className={styles.cta} />
+            <button onClick={handleEditClick} className={`${styles.cta} ${styles.cancel}`}>cancel</button>
+          </div>
+        )}
+      </form>
+    </>
   )
 };
 

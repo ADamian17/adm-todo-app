@@ -46,6 +46,7 @@ Start Project
 * [x] User can update a todo title by clicking ``pencil`` icon
   * [x] If title is empty add text error
   * [x] using ``escape`` key user can cancel editing mode or clicking in the pencil icon again
+  * [x] by pressing enter or clicking save the user can update the todo
 * [x] User can drag and drop between the lists
   * [x] Update todo status when user drop todo in the list
   * [x] If user drop list in done show animation

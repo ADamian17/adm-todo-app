@@ -4,9 +4,9 @@ import TodoCta from "../TodoCta";
 import styles from "./TodoCtaGroup.module.scss";
 
 const TodoCtaGroup = () => {
-  const { handleEditClick, handleDelete } = useTodoCtx();
+  const { allowEdit, handleEditClick, handleDelete } = useTodoCtx();
 
-  return (
+  return !allowEdit && (
     <div className={styles.ctaGroup}>
       <TodoCta icon="pencil" onClick={handleEditClick} />
       <TodoCta icon="bin" onClick={handleDelete} />

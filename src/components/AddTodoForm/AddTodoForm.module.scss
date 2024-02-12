@@ -16,10 +16,10 @@
       height: 100%;
       padding: 1.2rem;
       width: 100%;
-      box-shadow: 0 3.5rem 5rem -1.5rem rgba( #000000, 50%);
+      box-shadow: 0 3.5rem 5rem -1.5rem rgba(#000000, 50%);
 
       &.error {
-       border: 1px solid var(--red);
+        border: 1px solid var(--red);
       }
     }
 
@@ -39,8 +39,8 @@
   .submitBtn {
     border-radius: 0.8rem;
     border: none;
-    color: #fff;
-    background-color: #ad1fea;
+    color: var(--white);
+    background-color: var(--purple);
     font-size: 1.4rem;
     font-size: 13px;
     font-weight: 700;
@@ -49,10 +49,11 @@
     padding: 1rem 1.6rem;
     position: relative;
     text-transform: capitalize;
-    transition: all .2s linear;
+    transition: all 0.2s linear;
 
     &:hover {
-      background-color: #be4eee;
+      background-color: var(--purple-hover);
+      cursor: pointer;
     }
   }
 }

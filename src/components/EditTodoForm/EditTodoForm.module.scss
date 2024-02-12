@@ -1,7 +1,20 @@
 .form {
+  align-items: center;
   border: none;
+  display: flex;
+  justify-content: space-between;
   outline: none;
-  width: fit-content;
+
+  &.isEdit {
+    width: 92%;
+
+    .textField {
+      pointer-events: all;
+      outline: none;
+      border-bottom: 1px solid currentColor;
+      padding-bottom: 1px;
+    }
+  }
 
   .textField {
     font-size: 1.4rem;
@@ -10,13 +23,6 @@
     border: none;
     background-color: var(--accent-bg);
     pointer-events: none;
-
-    &.isEdit {
-      pointer-events: all;
-      outline: none;
-      border-bottom: 1px solid currentColor;
-      padding-bottom: 1px;
-    }
 
     &.lineThrough {
       text-decoration: line-through;
@@ -35,6 +41,30 @@
     &:active,
     &:read-only {
       outline: none;
+    }
+  }
+
+  .cta {
+    --btn-bg: var(--purple);
+    --btn-bg-hover: var(--purple-hover);
+
+    padding: 0.4rem 0.6rem;
+    border-radius: 0.4rem;
+    border: none;
+    text-transform: capitalize;
+    background-color: var(--btn-bg);
+    transition: all 0.2s linear;
+
+    &.cancel {
+      --btn-bg: hsl(192, 98%, 52%);
+      --btn-bg-hover: hsl(192, 90%, 63%);
+
+      margin-left: 1rem;
+    }
+
+    &:hover {
+      background-color: var(--btn-bg-hover);
+      cursor: pointer;
     }
   }
 }
