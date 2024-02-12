@@ -1,6 +1,6 @@
 import { ChangeEventHandler, FormEventHandler, ReactNode, useEffect, useState } from "react"
 import { TodoCtx } from "../../contexts/todo.context"
-import { useColumnsStore } from "../../state/useColumnStore"
+import { useColumnsStore } from "../../state/useColumnsStore"
 
 type TodoProviderType = {
   children: ReactNode;

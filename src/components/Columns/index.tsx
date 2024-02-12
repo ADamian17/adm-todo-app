@@ -1,6 +1,6 @@
 import { DragDropContext } from 'react-beautiful-dnd';
 
-import { useColumnsStore } from '../../state/useColumnStore';
+import { useColumnsStore } from '../../state/useColumnsStore';
 import Column from '../Column';
 
 import styles from "./Columns.module.scss";

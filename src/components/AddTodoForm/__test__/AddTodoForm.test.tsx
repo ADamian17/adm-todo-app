@@ -1,6 +1,6 @@
 import { render, screen, fireEvent, act } from '@testing-library/react';
 
-import { useColumnsStore } from "../../../state/useColumnStore"
+import { useColumnsStore } from "../../../state/useColumnsStore"
 import AddTodoForm from '..';
 
 const initialState = useColumnsStore.getState()

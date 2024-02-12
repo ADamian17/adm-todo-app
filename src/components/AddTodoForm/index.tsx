@@ -1,7 +1,7 @@
 import { ChangeEventHandler, FormEventHandler, useState } from "react";
 
 import { Todo } from "../../helpers/Todo";
-import { useColumnsStore } from "../../state/useColumnStore";
+import { useColumnsStore } from "../../state/useColumnsStore";
 
 import styles from "./AddTodoForm.module.scss";
 

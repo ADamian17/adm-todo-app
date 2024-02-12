@@ -1,7 +1,7 @@
 import React from "react";
 import { Droppable } from "react-beautiful-dnd";
 
-import { useColumnsStore } from "../../state/useColumnStore";
+import { useColumnsStore } from "../../state/useColumnsStore";
 import Todo from "../Todo";
 
 import styles from "./Column.module.scss";
