@@ -1,12 +1,12 @@
-import MainHeader from './components/MainHeader'
-import ThemeProvider from './components/ThemeProvider'
 import Columns from './components/Columns'
+import Hero from './components/Hero'
+import ThemeProvider from './components/ThemeProvider'
 
 function App() {
   return (
     <>
       <ThemeProvider />
-      <MainHeader />
+      <Hero />
 
       <Columns />
     </>

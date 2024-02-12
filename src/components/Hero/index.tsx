@@ -1,12 +1,16 @@
 import { MouseEventHandler } from "react";
-import TodoForm from "../TodoForm";
 
-import styles from "./MainHeader.module.scss";
+import TodoForm from "../TodoForm";
 import useThemeStore from "../../state/useThemeStore";
+
+import styles from "./Hero.module.scss";
 
 const MainHeader = () => {
   const { theme, toggleTheme } = useThemeStore(state => state)
   const icon = theme === "dark" ? "sun" : "moon";
+  const headerStyles = {
+    backgroundImage: `url(images/bg-desktop-${theme}.jpg)`
+  }
 
   const handleClick: MouseEventHandler = () => {
     toggleTheme(theme)
@@ -15,7 +19,7 @@ const MainHeader = () => {
   return (
     <header
       className={styles.hero}
-      style={{ backgroundImage: `url(images/bg-desktop-${theme}.jpg)` }}
+      style={headerStyles}
     >
 
       <nav className={styles.nav}>
