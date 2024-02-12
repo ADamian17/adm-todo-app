@@ -1,6 +1,6 @@
 import { DragDropContext } from 'react-beautiful-dnd';
 
-import { useTodoListsStore } from '../../state/useColumnStore';
+import { useColumnsStore } from '../../state/useColumnStore';
 import Column from '../Column';
 
 import styles from "./Columns.module.scss";
@@ -8,7 +8,7 @@ import styles from "./Columns.module.scss";
 /* LINK https://github.com/atlassian/react-beautiful-dnd/blob/master/docs/api/drag-drop-context.md */
 
 const Columns = () => {
-  const { getColumns, updateColumnOnDrag } = useTodoListsStore()
+  const { getColumns, updateColumnOnDrag } = useColumnsStore(state => state)
   const columns = getColumns();
 
   const columnsList = columns && columns.map(column => (

@@ -1,12 +1,12 @@
 import { ChangeEventHandler, FormEventHandler, useState } from "react";
 
 import { Todo } from "../../helpers/Todo";
-import { useTodoListsStore } from "../../state/useColumnStore";
+import { useColumnsStore } from "../../state/useColumnStore";
 
 import styles from "./AddTodoForm.module.scss";
 
 const AddTodoForm = () => {
-  const { addTodo } = useTodoListsStore(state => state)
+  const { addTodo } = useColumnsStore(state => state)
   const [inputVal, setInputVal] = useState("")
   const [inputError, setInputError] = useState(false)
 
@@ -32,6 +32,7 @@ const AddTodoForm = () => {
     <form
       onSubmit={handleSubmit}
       className={styles.wrapper}
+      data-testid="add-todo-form"
     >
       <div className={styles.inputWrapper}>
         <input
@@ -40,12 +41,14 @@ const AddTodoForm = () => {
           placeholder="e.g oil change"
           type="text"
           value={inputVal}
+          data-testid="add-todo-form-input"
         />
-        {inputError && <p className={styles.textFieldError}>Field required</p>}
+        {inputError && <p className={styles.textFieldError} data-testid="add-todo-form-error-msg">Field required</p>}
       </div>
 
       <input
         className={styles.submitBtn}
+        data-testid="add-todo-form-btn"
         type="submit"
         value="add todo"
       />

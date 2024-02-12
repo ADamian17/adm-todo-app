@@ -1,7 +1,7 @@
 import React from "react";
 import { Droppable } from "react-beautiful-dnd";
 
-import { useTodoListsStore } from "../../state/useColumnStore";
+import { useColumnsStore } from "../../state/useColumnStore";
 import Todo from "../Todo";
 
 import styles from "./Column.module.scss";
@@ -13,7 +13,7 @@ type ColumnType = {
 /* LINK https://github.com/atlassian/react-beautiful-dnd/blob/master/docs/api/droppable.md */
 
 const Column: React.FC<ColumnType> = ({ headline }) => {
-  const { getColumn } = useTodoListsStore()
+  const { getColumn } = useColumnsStore(state => state)
   const columnData = getColumn(headline.toLowerCase())
 
   const todosList = columnData && columnData.map((todo, idx) => (

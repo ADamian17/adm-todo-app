@@ -4,7 +4,7 @@ import { persist } from "zustand/middleware";
 import { setUpdatedColumns } from "../helpers/setUpdatedColumns";
 import { UseColumnStoreActions, UseColumnStoreState } from "../types";
 
-export const useTodoListsStore = create(
+export const useColumnsStore = create(
   persist<UseColumnStoreState & UseColumnStoreActions>(
     (set, get) => ({
       columns: {

@@ -5,12 +5,12 @@ import Fireworks from "react-canvas-confetti/dist/presets/fireworks"
 import { TodoType } from "../../types";
 
 import styles from "./Todo.module.scss";
-import { useTodoListsStore } from "../../state/useColumnStore";
+import { useColumnsStore } from "../../state/useColumnStore";
 
 /* LINK https://github.com/atlassian/react-beautiful-dnd/blob/master/docs/api/draggable.md */
 
 const Todo: React.FC<TodoType & { idx: number }> = ({ id, title, status, idx }) => {
-  const { removeTodo, updateTodo } = useTodoListsStore(state => state)
+  const { removeTodo, updateTodo } = useColumnsStore(state => state)
   const [allowEdit, setAllowEdit] = useState(false)
   const [todoTitle, setTodoTitle] = useState(title)
   const [error, setError] = useState(false)
