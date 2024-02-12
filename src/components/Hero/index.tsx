@@ -1,6 +1,6 @@
 import { MouseEventHandler } from "react";
 
-import TodoForm from "../TodoForm";
+import AddTodoForm from "../AddTodoForm";
 import useThemeStore from "../../state/useThemeStore";
 
 import styles from "./Hero.module.scss";
@@ -32,7 +32,7 @@ const MainHeader = () => {
         </svg>
       </nav>
 
-      <TodoForm />
+      <AddTodoForm />
     </header>
   )
 };

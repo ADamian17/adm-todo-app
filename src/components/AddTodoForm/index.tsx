@@ -3,9 +3,9 @@ import { ChangeEventHandler, FormEventHandler, useState } from "react";
 import { Todo } from "../../helpers/Todo";
 import { useTodoListsStore } from "../../state/useColumnStore";
 
-import styles from "./TodoForm.module.scss";
+import styles from "./AddTodoForm.module.scss";
 
-const TodoForm = () => {
+const AddTodoForm = () => {
   const { addTodo } = useTodoListsStore(state => state)
   const [inputVal, setInputVal] = useState("")
   const [inputError, setInputError] = useState(false)
@@ -53,4 +53,4 @@ const TodoForm = () => {
   )
 };
 
-export default TodoForm;
+export default AddTodoForm;
