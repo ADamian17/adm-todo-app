@@ -1,16 +1,7 @@
-import Columns from './components/Columns'
-import Hero from './components/Hero'
-import ThemeProvider from './components/ThemeProvider'
+import ColumnsContainer from './containers/ColumnsContainer'
 
 function App() {
-  return (
-    <>
-      <ThemeProvider />
-      <Hero />
-
-      <Columns />
-    </>
-  )
+  return <ColumnsContainer />
 }
 
 export default App

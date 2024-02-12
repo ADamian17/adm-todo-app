@@ -1,6 +1,6 @@
-import { render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
 
-import App from './App';
+import ColumnsContainer from '..';
 
 Object.defineProperty(window, "matchMedia", {
   writable: true,
@@ -18,10 +18,8 @@ Object.defineProperty(window, "matchMedia", {
 
 describe('App', () => {
   it('renders headline', () => {
-    render(<App />);
+    const tree = render(<ColumnsContainer />);
 
-    screen.debug();
-
-    // check if App components renders headline
+    expect(tree).toMatchSnapshot()
   });
 });

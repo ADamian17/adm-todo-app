@@ -1,16 +1,4 @@
-# Todo App
-
-## Instructions: Make a frontend-only todo list app
-
-* It has three vertical lists. Todo, Doing, and Done
-* Items are created via a form (they can be stored in browser state, no need to have
-a backend)
-* Items are draggable from one list to another
-* Items can be reordered within a list
-* When you drag an item into the Done list, confetti explodes on the screen! Or
-something else interesting. You can use a package for this.
-* Overall the app has a usable design with a unique color palette. You are free to
-make whatever UI and UX decisions you want to make it usable. Don't worry, we aren't looking for a groundbreaking innovative design. Just lay things out decently and add some colors.
+# [ADM] Todo App
 
 ## Technologies used
 
@@ -22,14 +10,29 @@ make whatever UI and UX decisions you want to make it usable. Don't worry, we ar
 
 ## Usage
 
-### Add Todo 
+Clone repo
 
-https://github.com/ADamian17/adm-todo-app/assets/52466233/4dfbf72b-dbfb-4e16-9195-5c6712d49d6c
+```bash
+  git clone git@github.com:ADamian17/adm-todo-app.git
+```
 
-* User can add todo by clicking add todo or pressing enter
+Navigate to the repo
 
-* Clone repo
-* Install dependencies ``yarn or yarn install``
+```bash
+  cd adm-todo-app
+```
+
+Install dependencies
+
+```bash
+  yarn install
+```
+
+Start Project
+
+```bash
+  yarn dev
+```
 
 ## User Stories
 
@@ -38,10 +41,19 @@ https://github.com/ADamian17/adm-todo-app/assets/52466233/4dfbf72b-dbfb-4e16-919
   * [x] Todo can only be added if the title is not empty
   * [x] If title is empty add text error
   * [x] By default todo is added to the ``Todo`` list
-* [x] User can delete a todo by clicking in the bin icon
-* [x] User can update a todo title by clicking pencil icon
+  * [x] Todo is added by pressing key ``enter`` or clicking on ``Add todo`` btn
+* [x] User can delete a todo by clicking in the ``trash bin`` icon
+* [x] User can update a todo title by clicking ``pencil`` icon
   * [x] If title is empty add text error
+  * [x] using ``escape`` key user can cancel editing mode or clicking in the pencil icon again
 * [x] User can drag and drop between the lists
   * [x] Update todo status when user drop todo in the list
   * [x] If user drop list in done show animation
-  * [ ] animation should only run once
+
+## Observations
+
+I used the react-beautiful-dnd library to handle the drag an drop. The main logic to handle the dnd, is located in the zustand store:
+
+* ``src/state/useColumnsStore``,
+* ``useColumnsStore.updateColumnOnDrag`` method
+* ``src/helpers/setUpdatedColumns`` function.
