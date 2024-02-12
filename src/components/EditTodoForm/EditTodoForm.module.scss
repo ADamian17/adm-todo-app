@@ -1,0 +1,40 @@
+.form {
+  border: none;
+  outline: none;
+  width: fit-content;
+
+  .textField {
+    font-size: 1.4rem;
+    line-height: 1.4rem;
+    letter-spacing: -0.166667px;
+    border: none;
+    background-color: var(--accent-bg);
+    pointer-events: none;
+
+    &.isEdit {
+      pointer-events: all;
+      outline: none;
+      border-bottom: 1px solid currentColor;
+      padding-bottom: 1px;
+    }
+
+    &.lineThrough {
+      text-decoration: line-through;
+      opacity: 0.5;
+    }
+
+    &.error {
+      color: var(--red);
+
+      &::placeholder {
+        color: currentColor;
+      }
+    }
+
+    &:focus,
+    &:active,
+    &:read-only {
+      outline: none;
+    }
+  }
+}

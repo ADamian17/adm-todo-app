@@ -1,0 +1,28 @@
+.ctaGroup {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+
+  .cta {
+    border-radius: 0.4rem;
+    border: none;
+    display: grid;
+    height: calc(2.4rem);
+    place-content: center;
+    width: calc(2.4rem);
+    background-color: transparent;
+    transition: background-color 0.3s ease-out;
+
+    .icon {
+      width: 1.2rem;
+      height: 1.2rem;
+      fill: currentColor;
+      opacity: 0.8;
+    }
+
+    &:hover {
+      background-color: rgba(111, 110, 110, 0.5);
+      cursor: pointer;
+    }
+  }
+}
