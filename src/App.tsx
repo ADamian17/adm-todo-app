@@ -1,6 +1,6 @@
 import MainHeader from './components/MainHeader'
 import ThemeProvider from './components/ThemeProvider'
-import TodosContainer from './containers/TodosContainer'
+import Columns from './components/Columns'
 
 function App() {
   return (
@@ -8,7 +8,7 @@ function App() {
       <ThemeProvider />
       <MainHeader />
 
-      <TodosContainer />
+      <Columns />
     </>
   )
 }
