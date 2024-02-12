@@ -27,14 +27,14 @@ export const TodoProvider = ({ children, idx, column, title }: TodoProviderType)
     function handleAllowEdit(e: KeyboardEvent) {
       if (allowEdit && e.key.toLowerCase() === "escape") {
         setAllowEdit(false)
-        setTodoTitle(title)
+        setTodoTitle(todoTitle)
       }
     }
 
     return () => {
       window.removeEventListener("keypress", handleAllowEdit)
     }
-  }, [allowEdit])
+  }, [allowEdit, todoTitle])
 
   const handleDelete = () => {
     removeTodo({
@@ -51,19 +51,18 @@ export const TodoProvider = ({ children, idx, column, title }: TodoProviderType)
   const handleUpdateTodo: FormEventHandler = (e) => {
     e.preventDefault()
 
-    if (title.trim() === "") {
+    if (todoTitle.trim() === "") {
       setError(true)
       setPlaceHolderText("Required Field")
       return;
     }
 
+    setAllowEdit(false)
     updateTodo({
       column,
       idx,
-      title: title
+      title: todoTitle
     })
-
-    setAllowEdit(false)
   }
 
   const handleChange: ChangeEventHandler<HTMLInputElement> = (e) => {
