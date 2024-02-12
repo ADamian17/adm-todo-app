@@ -1,18 +1,18 @@
 import { DragDropContext } from 'react-beautiful-dnd';
 
-import { useTodoListsStore } from '../../state/useColumnStore';
-import Column from '../../components/Column';
+import { useColumnsStore } from '../../state/useColumnsStore';
+import Column from '../Column';
 
-import styles from "./TodosContainer.module.scss";
+import styles from "./Columns.module.scss";
 
 /* LINK https://github.com/atlassian/react-beautiful-dnd/blob/master/docs/api/drag-drop-context.md */
 
-const TodosContainer = () => {
-  const { getColumns, updateColumnOnDrag } = useTodoListsStore()
+const Columns = () => {
+  const { getColumns, updateColumnOnDrag } = useColumnsStore(state => state)
   const columns = getColumns();
 
   const columnsList = columns && columns.map(column => (
-    <Column key={column} headline={column} columnAccentColor={''} />
+    <Column key={column} headline={column} />
   ))
 
   return (
@@ -24,4 +24,4 @@ const TodosContainer = () => {
   )
 };
 
-export default TodosContainer;
+export default Columns;

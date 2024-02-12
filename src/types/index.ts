@@ -33,4 +33,5 @@ export type UseColumnStoreActions = {
   removeTodo: ({ column, idx }: RemoveTodoArgs) => void;
   updateColumnOnDrag: OnDragEndResponder;
   updateTodo: ({ column, idx, title }: UpdateTodoArgs) => void;
+  resetColumns: () => void;
 };

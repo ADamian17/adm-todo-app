@@ -1,0 +1,23 @@
+.checkedIcon {
+  background-color: var(--accent-bg);
+  border-radius: 100%;
+  border: 1px solid var(--line-accent);
+  display: grid;
+  height: 20px;
+  place-content: center;
+  width: 20px;
+
+  img {
+    display: none;
+    width: 8px;
+    height: 5px;
+  }
+
+  &.done {
+    background-image: var(--todo-done-bg);
+
+    img {
+      display: block;
+    }
+  }
+}

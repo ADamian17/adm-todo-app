@@ -4,14 +4,18 @@ import { persist } from "zustand/middleware";
 import { setUpdatedColumns } from "../helpers/setUpdatedColumns";
 import { UseColumnStoreActions, UseColumnStoreState } from "../types";
 
-export const useTodoListsStore = create(
+const initialState = {
+  columns: {
+    todo: [],
+    doing: [],
+    done: [],
+  },
+};
+
+export const useColumnsStore = create(
   persist<UseColumnStoreState & UseColumnStoreActions>(
     (set, get) => ({
-      columns: {
-        todo: [],
-        doing: [],
-        done: [],
-      },
+      ...initialState,
       addTodo: (todo) => {
         if (!todo) return;
 
@@ -66,6 +70,7 @@ export const useTodoListsStore = create(
 
         set({ columns: updatedTodos });
       },
+      resetColumns: () => set(initialState),
     }),
     {
       name: "todo-list",

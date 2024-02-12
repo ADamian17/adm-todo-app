@@ -1,14 +1,14 @@
-import MainHeader from './components/MainHeader'
+import Columns from './components/Columns'
+import Hero from './components/Hero'
 import ThemeProvider from './components/ThemeProvider'
-import TodosContainer from './containers/TodosContainer'
 
 function App() {
   return (
     <>
       <ThemeProvider />
-      <MainHeader />
+      <Hero />
 
-      <TodosContainer />
+      <Columns />
     </>
   )
 }
